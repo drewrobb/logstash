@@ -15,6 +15,7 @@ RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true 
 
 RUN bash -c "/opt/logstash/bin/plugin install logstash-output-syslog"
 RUN bash -c "/opt/logstash/bin/plugin install logstash-output-kafka"
+RUN bash -c "/opt/logstash/bin/plugin install logstash-output-redis"
 
 ADD ./build/libs/logstash-executor-deps.jar /tmp/logstash-executor-deps.jar
 ADD ./build/libs/logstash-executor.jar /tmp/logstash-executor.jar

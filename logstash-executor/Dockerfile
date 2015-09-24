@@ -17,8 +17,7 @@ RUN bash -c "/opt/logstash/bin/plugin install logstash-output-syslog"
 RUN bash -c "/opt/logstash/bin/plugin install logstash-output-kafka"
 RUN bash -c "/opt/logstash/bin/plugin install logstash-output-redis"
 
-ADD ./build/libs/logstash-executor-deps.jar /tmp/logstash-executor-deps.jar
-ADD ./build/libs/logstash-executor.jar /tmp/logstash-executor.jar
+ADD ./build/docker/logstash-mesos-executor.jar /tmp/logstash-mesos-executor.jar
 
 ADD ./build/resources/main/run_logstash.sh /tmp/run_logstash.sh
 ADD ./start-executor.sh /tmp/start-executor.sh

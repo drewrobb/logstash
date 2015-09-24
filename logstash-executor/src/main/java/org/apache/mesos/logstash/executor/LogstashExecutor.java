@@ -107,9 +107,10 @@ public class LogstashExecutor implements Executor {
     public void registered(ExecutorDriver driver, Protos.ExecutorInfo executorInfo,
         Protos.FrameworkInfo frameworkInfo, Protos.SlaveInfo slaveInfo) {
         LOGGER.info("LogstashExecutor Logstash registered. slaveId={}", slaveInfo.getId());
-
+        LOGGER.info("LogstashExecutor Hostname={}", slaveInfo.getHostname());
         liveState.setHostName(slaveInfo.getHostname());
-        dockerClient.startupComplete(slaveInfo.getHostname());
+        // TODO setup bind to 0.0.0.0 for docker daemon and change back to slaveInfo.getHostname()??
+        dockerClient.startupComplete("127.0.0.1");
     }
 
     @Override

@@ -1,4 +1,4 @@
-FROM mesosphere/mesos:0.22.1-1.0.ubuntu1404
+FROM mesosphere/mesos:0.24.1-0.2.35.ubuntu1404
 
 RUN echo 'deb http://packages.elasticsearch.org/logstash/1.5/debian stable main' | tee /etc/apt/sources.list.d/logstash.list
 

@@ -3,8 +3,8 @@ import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
 import com.bmuschko.gradle.docker.tasks.image.DockerTagImage
 
 ext {
-    imagePrefix = 'mesos'
-    mesosVer = "0.22.1"
+    imagePrefix = 'docker.strava.com/mesos'
+    mesosVer = "0.24.1"
     slf4jVer = "1.7.12"
     springBootVersion = "1.2.5.RELEASE"
     junitVer = "4.11"
